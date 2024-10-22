@@ -1,0 +1,52 @@
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+.card-container {
+    width: 100%;
+    aspect-ratio: 26 / 37;
+    position: relative;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+
+    &.flipped {
+        transform: rotateY(180deg);
+    }
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
