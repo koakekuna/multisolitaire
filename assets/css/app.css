@@ -5,3 +5,7 @@
 /* This file is for your main application CSS */
 
 @import "./card.css";
+
+main {
+    background: url("/images/bg.jpg");
+}
